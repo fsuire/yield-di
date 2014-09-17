@@ -58,7 +58,9 @@ var fooBar = function *() {
 
 // you can eventually add options to your service
 fooBar.options = {
-  cache: true, // defaults to false. If true, the service function will be executed once. All other call will return the result of the first execution
+  // cache: defaults to false. If true, the service function will be executed once. All other call will return the result of the first execution
+  cache: true, 
+  // dependencies: default to {}. Each service declared there will be accessible in the service function within this.dependencies
   dependencies: {
     foo: 'foo',
     baz: 'foo/bar/baz'
@@ -66,4 +68,11 @@ fooBar.options = {
 };
 
 module.exports = fooBar;
+```
+You also can register a service instance at run time
+```js
+var something = 'something';
+di.set('something', something);
+var srv = yield di.get('something');
+// srv == 'something'
 ```
