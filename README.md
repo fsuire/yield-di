@@ -2,7 +2,13 @@
 
 a simple node.js DI that uses generators
 
-## Exemple
+### Installation
+
+```
+$ npm install yield-di
+```
+
+### Exemple
 
 ```js
 var Di = require('yield-di');
