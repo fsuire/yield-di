@@ -50,7 +50,7 @@ var fooBar = function *() {
   // foo === 'whatever you want'
   
   var baz = this.dependencies.baz;
-  // baz is another service, located in {your service directory}/foo/bar/baz
+  // baz is another service, located in {your service directory}/foo/bar/baz.js
   
   return 'whatever you want';
 };
@@ -73,5 +73,5 @@ You also can register a service instance at run time
 var something = 'something';
 di.set('something', something);
 var srv = yield di.get('something');
-// srv == 'something'
+// srv === 'something'
 ```
