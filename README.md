@@ -6,7 +6,6 @@ a simple node.js di, using generators
 ## Exemple
 
 ```js
-
 var Di = require('yield-di');
 
 /////////////////////
@@ -29,3 +28,42 @@ var fooBar = yield di.get('foo/bar');
 
 ```
 
+The services are node.js modules that simply returns a generator function :
+
+```js
+// {your service directory}/foo.js
+
+// your service function
+var foo = function *() {
+  return 'whatever you want';
+};
+
+module.exports = foo;
+```
+```js
+// {your service directory}/foo/bar.js
+
+// your service function
+var fooBar = function *() {
+
+  var foo = this.dependencies.foo;
+  // foo is our service foo.js
+  // foo === 'whatever you want'
+  
+  var baz = this.dependencies.baz;
+  // baz is another service, located in {your service directory}/foo/bar/baz
+  
+  return 'whatever you want';
+};
+
+// you can eventually add options to your service
+fooBar.options = {
+  cache: true, // defaults to false
+  dependencies: {
+    foo: 'foo',
+    baz: 'foo/bar/baz
+  }
+};
+
+module.exports = fooBar;
+```
