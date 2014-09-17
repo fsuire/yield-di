@@ -58,7 +58,7 @@ var fooBar = function *() {
 
 // you can eventually add options to your service
 fooBar.options = {
-  cache: true, // defaults to false
+  cache: true, // defaults to false. If true, the service function will be executed once. All other call will return the result of the first execution
   dependencies: {
     foo: 'foo',
     baz: 'foo/bar/baz'
