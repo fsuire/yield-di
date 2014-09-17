@@ -1,6 +1,6 @@
 ## yield-di
 
-a simple node.js di, using generators
+a simple node.js DI that uses generators
 
 ## Exemple
 
