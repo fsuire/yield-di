@@ -61,7 +61,7 @@ fooBar.options = {
   cache: true, // defaults to false
   dependencies: {
     foo: 'foo',
-    baz: 'foo/bar/baz
+    baz: 'foo/bar/baz'
   }
 };
 
