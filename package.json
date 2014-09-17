@@ -1,0 +1,24 @@
+{
+    "name": "yield-di",
+    "version": "0.0.1",
+    "description": "A Di which is yielding his services",
+    "main": "index",
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "http://github.com/gevorg/http-auth/blob/master/LICENSE"
+        }
+    ],
+    "engines": {
+        "node": ">=0.11"
+    },
+    "dependencies": {
+    },
+    "devDependencies": {
+        "co": "3.x",
+        "istanbul-harmony": "0.x",
+        "mocha": "1.x",
+        "mocha-istanbul": "0.x",
+        "sinon": "1.x"
+    }
+}
