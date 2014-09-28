@@ -145,4 +145,22 @@ describe('li/Di', function() {
 
     });
 
+    // -----------------------------------------------------------------------------------------------------------------
+
+    it('should return the names of all services in cache', function(done) {
+
+        co(function *() {
+
+            var names = di.getNames();
+            assert.equal(0, names.length);
+
+            di.set('testService', 'test service !!');
+            names = di.getNames();
+            assert.equal(1, names.length);
+            assert.equal('testService', names[0]);
+
+        })(done);
+
+    });
+
 });
